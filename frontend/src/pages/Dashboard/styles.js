@@ -48,6 +48,34 @@ export const ContainerDescription = styled.div`
 `;
 
 export const ContainerDevs = styled.div`
+
     width: 100%;
     height: 48%;
+    padding: 10px;
+    display: ${ props => props.EnableDevs == true ? 'flex' : 'none'};
+    justify-content: space-around;  
+    animation: ${HomeLoading} 2s;  
+`;
+
+export const PerfilDev = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    img{
+        width: 215px;
+        height: 210px;
+    }
+`;
+
+export const NameDev = styled.label`
+    font-size: 18px;
+    font-weight: 500;
+`;
+
+export const DescriptionDev = styled.p`
+    font-size: 16px;
+    font-weight: 500;
+    color: #ABABAB;
 `;
