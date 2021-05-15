@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import Logo from '../../assests/Logo.png'
 import { 
     Container,
     ContainerDevs,
@@ -16,17 +16,13 @@ export default function Dashboard(){
         <Container>
             <ContainerWelcome>
                 <ContainerLogo>
-                    Bookflix
+                    <img src={Logo} />
                 </ContainerLogo>
                 <ContainerDescription>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown printer took a galley of type and scrambled it to make a type 
-                specimen book. It has survived not only five centuries, but also the leap into 
-                electronic typesetting, remaining essentially unchanged. It was popularised in 
-                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-                and more recently with desktop publishing software like Aldus PageMaker including 
-                versions of Lorem Ipsum
+                    BOOKFLIX é uma biblioteca gratuita que não gera fundos nem frentes,
+                    projeto é apenas ultilizado com intuito de ganhar pontos e passar
+                    ná avaliação do projeto, por que se não... acho que nem existiria,
+                    desde já estamos muito gratos em fazer o projeto.
                 </ContainerDescription>
             </ContainerWelcome>
             <ContainerDevs>dsfdsf</ContainerDevs>

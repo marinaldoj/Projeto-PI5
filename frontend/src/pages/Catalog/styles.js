@@ -4,6 +4,7 @@ export const Container = styled.div`
     padding: 20px;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 `;
 
 export const ContainerBook = styled.div`
@@ -11,7 +12,7 @@ export const ContainerBook = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0fr 0fr 0fr;
-    grid-gap: 20px;
+    grid-gap: 20px;   
 `;
 
 export const Book = styled.div`

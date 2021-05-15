@@ -7,6 +7,6 @@ export const Container = styled.div`
 
 export const ContainerContent = styled.div`
     background-color: #fff;
-    height: 100%;
+    height: 92vh;
     border-radius: 10px;
 `;
