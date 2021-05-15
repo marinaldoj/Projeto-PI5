@@ -20,12 +20,11 @@ export default function Dashboard(){
 
     const [enableDevs, setEnableDevs] = useState(false)
 
-    
     return(
         <Container>
             <ContainerWelcome>
                 <ContainerLogo>
-                    <img src={Logo} onClick={() => setEnableDevs(!enableDevs)} />
+                    <img src={Logo} onClick={() => setEnableDevs(!enableDevs)} alt='Imagem'/>
                 </ContainerLogo>
                 <ContainerDescription>
                     BOOKFLIX é uma biblioteca gratuita que não gera fundos nem frentes,
@@ -36,22 +35,22 @@ export default function Dashboard(){
             </ContainerWelcome>
             <ContainerDevs EnableDevs={enableDevs}>
                 <PerfilDev>
-                    <img src={Maris} />
+                    <img src={Maris} alt='Maris' />
                     <NameDev>Marinaldo Carvalho</NameDev>
                     <DescriptionDev> Desenvolvedor Front end </DescriptionDev>
                 </PerfilDev>
                 <PerfilDev>
-                    <img src={Felipe} />
+                    <img src={Felipe} alt='Felipe' />
                     <NameDev>Felipe Pereira</NameDev>
                     <DescriptionDev> Desenvolvedor Back end </DescriptionDev>
                 </PerfilDev>
                 <PerfilDev>
-                    <img src={Fernanda} />
+                    <img src={Fernanda} alt='Fernanda' />
                     <NameDev>Fernanda Mota</NameDev>
                     <DescriptionDev> Desenvolvedora Back end </DescriptionDev>
                 </PerfilDev>
                 <PerfilDev>
-                    <img src={Isael} />
+                    <img src={Isael} alt='Isael' />
                     <NameDev>Isael Pereira</NameDev>
                     <DescriptionDev> Desenvolvedor Front end </DescriptionDev>
                 </PerfilDev>

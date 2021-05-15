@@ -41,6 +41,7 @@ export const ContainerTitle = styled.div`
 export const TitleBook = styled.label`
     font-size: 18px;
     font-weight: 500;
+    margin: ${ props => props.modalMargin === true ? '10px 0' : 'none'};
 `;
 
 export const DescriptionBook = styled.p`
@@ -53,4 +54,25 @@ export const ContainerPaginate = styled.div`
     width: 100%;
     height: 10%;
     background-color: blue;
+`;
+
+export const ContainerModal = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ContainerModalImage = styled.div`
+    img{
+        width: 300px;
+        height: 350px;
+    }
+`;
+
+export const ContainerModalStatusBook = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 20px; 
 `;

@@ -16,15 +16,14 @@ import {
     ItensTitle,
 } from './styles';
 
-
 export default function Aside(){
 
-    const [closeMenu, setCloseMenu] = useState(false)
+    const [closeMenu, setCloseMenu] = useState(true)
     
     return(
         <Container closeMenu={closeMenu}>
             <ContainerTitle >
-                <LogoTitle>{closeMenu ? "Flix" : "BOOKFLIX"}</LogoTitle>
+                <LogoTitle onClick={() => setCloseMenu(!closeMenu)}>{closeMenu ? "Flix" : "BOOKFLIX"}</LogoTitle>
                 {closeMenu ? 
                     <FiArrowRightCircle 
                         size={24} 
@@ -47,11 +46,11 @@ export default function Aside(){
                     <AiOutlineUnorderedList size={24} />
                     {closeMenu ? null : <ItensTitle>Catálogo</ItensTitle> }
                 </ContainerItem>
-                <ContainerItem>
+                <ContainerItem to="/">
                     <AiOutlineSearch size={24} />
                     {closeMenu ? null : <ItensTitle>Buscar</ItensTitle> }
                 </ContainerItem>
-                <ContainerItem>
+                <ContainerItem to="/">
                     <AiOutlineClockCircle size={24} />
                     {closeMenu ? null : <ItensTitle>Recentes</ItensTitle> }
                 </ContainerItem>

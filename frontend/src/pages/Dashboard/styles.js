@@ -10,6 +10,7 @@ const HomeLoading = keyframes`
     }
 `;
 
+
 export const Container = styled.div`
     width: 100%;
     height: 100%;
@@ -52,7 +53,7 @@ export const ContainerDevs = styled.div`
     width: 100%;
     height: 48%;
     padding: 10px;
-    display: ${ props => props.EnableDevs == true ? 'flex' : 'none'};
+    display: ${ props => props.EnableDevs === true ? 'flex' : 'none'};
     justify-content: space-around;  
     animation: ${HomeLoading} 2s;  
 `;

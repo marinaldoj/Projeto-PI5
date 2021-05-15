@@ -54,4 +54,5 @@ export const LogoTitle = styled.span`
     font-size: 20px;
     color: rgb(255, 17, 17);
     font-weight: bold;
+    cursor: pointer;
 `;
