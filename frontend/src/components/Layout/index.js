@@ -7,11 +7,11 @@ import { Container } from './styles'
 
 export default function Layout({children}){
     return(
-        <Container>
-            <Aside />
-            <Content>
-                {children}
-            </Content>
-        </Container>
+            <Container>
+                <Aside />
+                <Content>
+                    {children}
+                </Content>  
+            </Container>
     )
 }

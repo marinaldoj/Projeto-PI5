@@ -20,7 +20,7 @@ import {
     ContainerTitle,
     ContainerModal,
     ContainerModalImage,
-    ContainerModalStatusBook
+    ContainerModalStatusBook,
 } from './styles';
 
 Modal.setAppElement('#root')
