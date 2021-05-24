@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
 import { FiPlus } from 'react-icons/fi';
 import api from '../../services/api'
@@ -39,8 +39,6 @@ const customStyles = {
 
 export default function Content({children}){
 
-    const filesElement = useRef(null);
-
     const [modalSecondary, setModalSecondary] = useState(false)
     const [titulo, setTitulo] = useState('')
     const [autor, setAutor] = useState('')
@@ -48,36 +46,20 @@ export default function Content({children}){
     const [data, setData] = useState('')
     const [numeropg, setNumeroPg] = useState('')
     const [file, setFile] = useState('')
+    const [cover, setCover] = useState('')
 
     async function  onSubmit(){
-        await setFile(await convertBase(file))
         let dataFd = new FormData();
-        let livro
-        livro = {
-            titulo,
-            autor,
-            descricao,
-            data,
-            numeropg
-        }
-        dataFd.append('livro', livro.toString())
-        dataFd.append('file', file)
+        dataFd.append('title', titulo);
+        dataFd.append('author', autor);
+        dataFd.append('description', descricao);
+        dataFd.append('date_publish', data);
+        dataFd.append('nm_page', numeropg);
+        dataFd.append('archive_path', file);
+        dataFd.append('cover_path', cover);
 
-        console.log(file)
-        await api.post('/biblioteca/livros', dataFd)
-    }
-
-    async function convertBase (file) {
-        return new Promise((resolve, reject) => {
-            const fileReader = new FileReader();
-            fileReader.readAsBinaryString(file);
-            fileReader.onload = () => {
-                resolve(fileReader.result);
-            }
-            fileReader.onerror = (error) => {
-                reject(error)
-            }
-        })
+        await api.post('/book/create', dataFd);
+        setModalSecondary(false);
     }
 
     return(
@@ -136,9 +118,12 @@ export default function Content({children}){
                             <input type='file' style={{
                                 margin: '8px 0 8px 0',
                             }}
-                            multiple ref={filesElement}
-                            value={file}
-                            onChange={() => setFile(filesElement)}
+                            onChange={(e) => setFile(e.target.files[0])}                           
+                            />
+                            <input type='file' style={{
+                                margin: '8px 0 8px 0',
+                            }}
+                            onChange={(e) => setCover(e.target.files[0])}                           
                             />
                             <ButtonConfirma onClick={() => onSubmit()}>
                                 Enviar
