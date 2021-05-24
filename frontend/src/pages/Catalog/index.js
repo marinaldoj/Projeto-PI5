@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import img from '../../assests/livro1.jpeg';
 
 import api from '../../services/api';
 import { 
@@ -13,6 +12,7 @@ import {
     ContainerModal,
     ContainerModalImage,
     ContainerModalStatusBook,
+    ButtonDelete
 } from './styles';
 
 Modal.setAppElement('#root')
@@ -54,8 +54,17 @@ export default function Catalog(){
 
     useEffect(() => {
         getBooks()
-        console.log(books)
     }, []);
+
+    async function handleDelete(id){
+        await api.delete(`/book/delete/${id}`);
+        setModalIsOpen(!modalIsOpen);
+        getBooks();
+    }
+
+    function getDownload(book){
+        window.open(`${book}`, '_blank');
+    }
 
     return(
         <Container>
@@ -67,13 +76,18 @@ export default function Catalog(){
                 >
                     <ContainerModal>
                         <ContainerModalImage>
-                            <img src={book == '' ? null : book.links.cover} alt={`Imagem do livro ${book.title}`}/>
+                            <img 
+                                src={book === '' ? null : book.links.cover} 
+                                alt={`Imagem do livro ${book.title}`}
+                                onClick={() => getDownload(book.links.file)}
+                            />
                         </ContainerModalImage>
                         <ContainerModalStatusBook>
                             <TitleBook modalMargin={true}>Nome: {book.title}</TitleBook>
                             <TitleBook modalMargin={true}>Autor: {book.author}</TitleBook>
                             <DescriptionBook>{book.description}</DescriptionBook>
                         </ContainerModalStatusBook>
+                        <ButtonDelete onClick={() => handleDelete(book.id)}>Excluir</ButtonDelete>
                     </ContainerModal>
                 </Modal>
                 {books.length > 0 ? books.map((book, index) => {

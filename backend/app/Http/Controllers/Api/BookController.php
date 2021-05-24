@@ -10,7 +10,6 @@ use App\Book;
 class BookController extends Controller
 {
     public function store(Request $request){
-        // if(!empty($request->file)){}
         $book = new Book;
         $book->author = $request->author;
         $book->title = $request->title;

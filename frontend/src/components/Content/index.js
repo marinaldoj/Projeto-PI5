@@ -75,7 +75,7 @@ export default function Content({children}){
                             <ContainerForm>
                                 <Title>Título :</Title>
                                 <BookInput 
-                                placeholder={' Harry Poti'}
+                                placeholder={' ex: Harry Potter'}
                                 value={titulo}
                                 onChange={(e) => setTitulo(e.target.value)}
                                 />
@@ -83,7 +83,7 @@ export default function Content({children}){
                             <ContainerForm>
                                 <Title>Autor :</Title>
                                 <BookInput 
-                                placeholder={' Harry Poti'}
+                                placeholder={' ex: Harry Potter'}
                                 value={autor}
                                 onChange={(e) => setAutor(e.target.value)}
                                 />
@@ -92,7 +92,7 @@ export default function Content({children}){
                                 <Title>Data :</Title>
                                 <BookInput 
                                 type='date'
-                                placeholder={' Harry Poti'}
+                                placeholder={' ex: Harry Potter'}
                                 value={data}
                                 onChange={(e) => setData(e.target.value)}
                                 />
@@ -100,7 +100,7 @@ export default function Content({children}){
                             <ContainerForm>
                                 <Title>N° de Paginas :</Title>
                                 <BookInput 
-                                placeholder={' Harry Poti'}
+                                placeholder={' ex: 1350'}
                                 value={numeropg}
                                 onChange={(e) => setNumeroPg(e.target.value)}
                                 />
@@ -110,17 +110,17 @@ export default function Content({children}){
                             <ContainerForm>
                                 <Title>Descrição :</Title>
                                 <BookText 
-                                placeholder={' Harry Poti'}
+                                placeholder={' ex: Harry Potter'}
                                 value={descricao}
                                 onChange={(e) => setDescricao(e.target.value)}
                                 />
                             </ContainerForm>
-                            <input type='file' style={{
+                            <Title>Arquivo :</Title><input type='file' style={{
                                 margin: '8px 0 8px 0',
                             }}
                             onChange={(e) => setFile(e.target.files[0])}                           
                             />
-                            <input type='file' style={{
+                           <Title>Capa :</Title><input type='file' style={{
                                 margin: '8px 0 8px 0',
                             }}
                             onChange={(e) => setCover(e.target.files[0])}                           

@@ -68,6 +68,7 @@ export const ContainerModalImage = styled.div`
     img{
         width: 300px;
         height: 350px;
+        cursor: pointer;
     }
 `;
 
@@ -76,3 +77,17 @@ export const ContainerModalStatusBook = styled.div`
     flex-direction: column;
     padding: 20px; 
 `;
+
+export const ButtonDelete = styled.button`
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #bf3219;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    :hover{
+        background-color: #913b2c;
+    }
+`;
+
